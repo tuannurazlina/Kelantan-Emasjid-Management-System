@@ -138,10 +138,21 @@ p {
      line-height: 24px;
 }
 
-a {
-     color: #222222;
-     text-decoration: none;
-     outline: none !important;
+table {
+     border-collapse: collapse;
+     width: 50%; /* Adjust the width as needed */
+     margin: 0 auto; /* Center the table */
+}
+
+th, td {
+     border: 1px solid #ddd;
+     padding: 8px;
+     text-align: center;
+}
+
+tbody a {
+     color: blue;
+     border-bottom: 1px solid blue; /* Add a bottom border to simulate underline */
 }
 
 a,
@@ -162,6 +173,21 @@ img {
 
  :focus {
      outline: 0;
+}
+
+/* Container for the statistic section */
+.statistic-container {
+     padding: 20px; /* Adjust as needed */
+}
+
+/* Table with fixed position */
+.fixed-table {
+     width: 100%;
+     border-collapse: collapse;
+     border: 1px solid #ddd;
+     position: fixed;
+     z-index: 1;
+     background-color: #fff; /* Add background color if needed */
 }
 
 .btn-custom {

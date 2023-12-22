@@ -190,6 +190,10 @@ img {
      background-color: #fff; /* Add background color if needed */
 }
 
+.fixed-height-image {
+     height: 200px; /* Adjust the height as needed */
+}
+
 .btn-custom {
      margin-top: 20px;
      background-color: transparent !important;

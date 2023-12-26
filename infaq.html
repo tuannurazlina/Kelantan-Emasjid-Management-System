@@ -356,18 +356,38 @@ section {
          AOS.init();
       </script>
       <script>
+      // Get the initial total donation amount
+      let totalDonationAmount = 30000;
+      
+      // Function to handle form submission
       function handleSubmit(event) {
-        event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
-    
-        // Display the success popup
-        document.getElementById('success-message').style.display = 'block';
-    }
-    
-    function closePopup() {
-        // Close the success popup
-        document.getElementById('success-message').style.display = 'none';
-    }
-    </script>
+          event.preventDefault();
+      
+          // Get the donation amount entered by the user
+          const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+      
+          // Check if the entered amount is valid
+          if (!isNaN(donationAmount) && donationAmount > 0) {
+              // Update the total donation amount
+              totalDonationAmount += donationAmount;
+      
+              // Display the updated total donation amount on the webpage
+              document.getElementById('donation-amount-display').textContent = `RM ${totalDonationAmount.toFixed(2)}`;
+      
+              // Display the success popup
+              document.getElementById('success-message').style.display = 'block';
+          } else {
+              // Handle invalid donation amount (e.g., show an error message)
+              alert('Please enter a valid donation amount.');
+          }
+      }
+      
+      // Function to close the success popup
+      function closePopup() {
+          // Close the success popup
+          document.getElementById('success-message').style.display = 'none';
+      }
+   </script>
     
    </body>
 </html>

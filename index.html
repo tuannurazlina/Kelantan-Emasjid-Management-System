@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
       <title>Kelantan E-Masjid Management System</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
@@ -25,466 +18,201 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
       <style>
-         /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+      @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+      @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+      @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
-
-/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
-
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
-
-/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
- 2) font-family: 'Poppins', sans-serif;
- ----------------------------------------*****/
-
-
-/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
-
-@import url(animate.min.css);
-@import url(normalize.css);
-@import url(icomoon.css);
-@import url(font-awesome.min.css);
-@import url(meanmenu.css);
-@import url(owl.carousel.min.css);
-@import url(swiper.min.css);
-@import url(slick.css);
-@import url(jquery.fancybox.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
-
-/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
-
-* {
-     box-sizing: border-box !important;
+      * {
+            box-sizing: border-box !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box !important;
+         }
+      .container {
+            max-width: 1170px;
+         }
+      body {
+            color: #666666;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.80857;
+            font-weight: normal;
+            }
+      ul,li,ol {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+         }
+      img {
+            max-width: 100%;
+            height: auto;
+         }
+      .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+         }
+      .header .center-desk
+      {
+            position: relative;
+            max-width: 130px;
+      }
+      .navigation.navbar {
+            float: center;
+            padding: 30px;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link {
+            padding: 10px 25px;
+            color: #2b2b2b;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 400;
+            border-radius: 20px;
+            text-transform: uppercase;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link:focus,
+      .navigation.navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+            background: #f0390f;
+         }
+      .navigation.navbar-dark .navbar-nav .active>.nav-link,
+      .navigation.navbar-dark .navbar-nav .nav-link.active,
+      .navigation.navbar-dark .navbar-nav .nav-link.show,
+      .navigation.navbar-dark .navbar-nav .show>.nav-link {
+            color: #fff;
+            background: #f0390f;
+         }
+         /* Main Content */
+main .welcome-section {
+    background-color: #fff; /* Light green background */
+    padding: 150px;
+    text-align: center;
 }
 
-.container {
-     max-width: 1170px;
+main .welcome-section h1 {
+    margin-bottom: 0.5em;
+    font-family: 'Poppins';
+    color: #333;
+    line-height: 1.4em;
+    font-weight: 700;
 }
 
-html {
-     scroll-behavior: smooth;
+main .welcome-section h2 {
+    margin-bottom: 1em;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.4em;
+    color: #333; /* Dark text for contrast */
 }
 
-body {
-     color: #666666;
-     font-size: 14px;
-     font-family: 'Poppins', sans-serif;
-     line-height: 1.80857;
-     font-weight: normal;
+main .welcome-section p {
+    margin-bottom: 1.5em;
+    color: #555; /* Slightly lighter text for the paragraph */
 }
 
-a {
-     color: #1f1f1f;
-     text-decoration: none !important;
-     outline: none !important;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     transition: all .3s ease-in-out;
+/* Add this CSS to style the info-box */
+.info-box {
+    box-sizing: border-box;
+    background-color: #fad3cb;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-     letter-spacing: 0;
-     font-weight: normal;
-     position: relative;
-     padding: 0;
-     font-weight: normal;
-     line-height: normal;
-     color: #111111;
-     margin: 0
+/* Style headings */
+.info-box h1 {
+    color: #333;
 }
 
-h1 {
-     font-size: 24px;
+.info-box h2 {
+    color: #f0390f; /* Orange color, you can change it */
 }
 
-h2 {
-     font-size: 22px;
+/* Style paragraph text */
+.info-box p {
+    color: #666;
+    line-height: 1.6;
+}
+/* Style the visit button */
+.visit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #f0390f; /* Orange color, you can change it */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.visit-button:hover {
+    background-color: #333; /* Darker color on hover, you can change it */
 }
 
-h3 {
-     font-size: 18px;
+main .welcome-section .visit-button:hover {
+    background-color: #FDD835; /* Darker yellow on hover */
 }
-
-h4 {
-     font-size: 16px
-}
-
-h5 {
-     font-size: 14px
-}
-
-h6 {
-     font-size: 13px
-}
-
-*,
-*::after,
-*::before {
-     -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-     box-sizing: border-box;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-     color: #212121;
-     text-decoration: none!important;
-     opacity: 1
-}
-
-button:focus {
-     outline: none;
-}
-
-ul,
-li,
-ol {
-     margin: 0px;
-     padding: 0px;
-     list-style: none;
-}
-
-p {
-     margin: 0px;
-     font-weight: 400;
-     font-size: 17px;
-     line-height: 24px;
-}
-
-table {
-     border-collapse: collapse;
-     width: 50%; /* Adjust the width as needed */
-     margin: 0 auto; /* Center the table */
-}
-
-th, td {
-     border: 1px solid #ddd;
-     padding: 8px;
-     text-align: center;
-}
-
-tbody a {
-     color: blue;
-     border-bottom: 1px solid blue; /* Add a bottom border to simulate underline */
-}
-
-a,
-.btn {
-     text-decoration: none !important;
-     outline: none !important;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     transition: all .3s ease-in-out;
-}
-
-img {
-     max-width: 100%;
-     height: auto;
-}
-
- :focus {
-     outline: 0;
-}
-
-/* Container for the statistic section */
-.statistic-container {
-     padding: 20px; /* Adjust as needed */
-}
-
-/* Table with fixed position */
-.fixed-table {
-     width: 100%;
-     border-collapse: collapse;
-     border: 1px solid #ddd;
-     position: fixed;
-     z-index: 1;
-     background-color: #fff; /* Add background color if needed */
-}
-
-.btn-custom {
-     margin-top: 20px;
-     background-color: transparent !important;
-     border: 2px solid #ddd;
-     padding: 12px 40px;
-     font-size: 16px;
-}
-
-.lead {
-     font-size: 18px;
-     line-height: 30px;
-     color: #767676;
-     margin: 0;
-     padding: 0;
-}
-
-.form-control:focus {
-     border-color: #ffffff !important;
-     box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
-}
-
-.navbar-form input {
-     border: none !important;
-}
-
-.badge {
-     font-weight: 500;
-}
-
-blockquote {
-     margin: 20px 0 20px;
-     padding: 30px;
-}
-
-button {
-     border: 0;
-     margin: 0;
-     padding: 0;
-     cursor: pointer;
-}
-
-.full {
-     float: left;
-     width: 100%;
-}
-
-.full {
-     width: 100%;
-     float: left;
-     margin: 0;
-     padding: 0;
-}
-
-.titlepage {
-     padding-bottom: 60px;
-}
-
-.titlepage h2 {
-     font-size: 45px;
-     color: #2b2b2b;
-     line-height: 60px;
-     font-weight: bold;
-     padding: 0;
-     display: inline-block;
-}
-
-.d_flex {
-     display: flex;
-     align-items: center;
-     flex-wrap: wrap;
-}
-
-.read_more {
-     font-size: 17px;
-     text-transform: uppercase;
-     transition: ease-in all 0.5s;
-     font-weight: bold;
-     color: #2b2b2b;
-     z-index: 999;
-     position: relative;
-}
-
-.link_btn {
-     display: flex;
-     align-items: center;
-}
-
-.read_more:before {
-     content: "";
-     width: 0px;
-     height: 1px;
-     border: #f0390f solid 1px;
-     transition: all 0.2s linear;
-     display: block;
-     margin-bottom: -16px;
-     position: relative;
-     z-index: -1;
-     left: 104px;
-     opacity: 0;
-     transition: ease-in all 0.5s;
-}
-
-.read_more:hover:before {
-     width: 140px;
-     opacity: 1;
-     transition: ease-in all 0.5s;
-}
-
-.read_more:hover {
-     color: #f0390f;
-     transition: ease-in all 0.5s;
-}
-
-.read_more::before::after {
-     width: 100%;
-     transition: ease-in all 0.5s;
-}
-
-.text_align_left {
-     text-align: left;
-}
-
-.text_align_right {
-     text-align: right;
-}
-
-.text_align_center {
-     text-align: center;
-}
-
-.img_responsive {
-     max-width: 100%;
-}
-
-
-/**-- heading section --**/
-
-
-/*-- header --*/
-
-.header {
-width: 100%;
-background:#fff0;
-height: 107px;
-padding: 27px 30px;
-position: absolute;
-z-index: 999;
-}
-
-.navigation.navbar {
-     float: right;
-     padding: 0;
-}
-
-.navigation.navbar-dark .navbar-nav .nav-link {
-     padding: 15px 30px;
-     color: #2b2b2b;
-     font-size: 12px;
-     line-height: 20px;
-     font-weight: 400;
-     border-radius: 30px;
-     text-transform: uppercase;
-}
-
-.navigation.navbar-dark .navbar-nav .nav-link:focus,
-.navigation.navbar-dark .navbar-nav .nav-link:hover {
-     color: #fff;
-     background: #f0390f;
-}
-
-.navigation.navbar-dark .navbar-nav .active>.nav-link,
-.navigation.navbar-dark .navbar-nav .nav-link.active,
-.navigation.navbar-dark .navbar-nav .nav-link.show,
-.navigation.navbar-dark .navbar-nav .show>.nav-link {
-     color: #fff;
-     background: #f0390f;
-}
-
-.di_no {
-     display: none;
-}
-
-ul.email {
-     padding-top: 1px;
-     display: flex;
-     align-items: center;
-     justify-content: flex-end;
-     flex-wrap: wrap;
-}
-
-ul.email li {
-     padding: 0px 30px;
-}
-
-ul.email li:nth-child(2) {
-     padding-right: 0;
-}
-
-ul.email li a {
-     font-size: 29px;
-}
-
-ul.email li i {
-     color: #5e5d5e;
-     font-size: 19px;
-}
-
-
-/** end header **/
-
-/** footer **/
-
+      .di_no {
+            display: none;
+         }
+      ul.email {
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+         }
+      ul.email li {
+            padding: 0px 30px;
+         }
+      ul.email li:nth-child(2) {
+            padding-right: 0;
+         }
+      ul.email li a {
+            font-size: 29px;
+         }
+      ul.email li i {
+            color: #5e5d5e;
+            font-size: 19px;
+         }
+      /* Footer styling */
 .footer {
-     padding-top: 120px;
-     background: #fff;
-     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f0390f; /* Set your desired background color */
+    text-align: center;
+    color: #fff; /* Set your desired text color */
 }
-
-
-.copyright {
-     margin-top: 90px;
-     padding-bottom: 25px;
-     background: #f0390f
-}
-
 .copyright p {
-     color: #fff;
-     font-size: 17 px;
-     line-height: 22px;
-     text-align: center;
-     padding-top: 25px;
-     font-weight: 400;
-     font-weight: normal;
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .copyright a {
-     color: #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* Add hover effect to the link */
 .copyright a:hover {
-     color: #3e0bce;
+    color: #3e0bce;
 }
 
-
-/** end footer **/
-
-
-/**  inner page css **/
-
-.inner_page .header {
-     box-shadow: 0 0 10px rgb(240, 57, 15);
-     margin-bottom: 10px;
-     position: inherit;
-}
-
-.inner_page .about {
-     margin-top: 80px;
-}
-
-.inner_page .class {
-     padding-top: 80px;
-     padding-bottom: 0;
-   }
       </style>
-
    </head>
-   <!-- body -->
    <body class="main-layout">
       <!-- header -->
       <div class="header">
@@ -540,60 +268,28 @@ ul.email li i {
             </div>
          </div>
       </div>
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- top -->
+      <main>
+         <section class="welcome-section">
+             <h1>Welcome To</h1>
+             <h2>Kelantan E-Masjid Management System</h2>
+             <p>
+                 The Kelantan E-Mosque Management System serves as a central hub, delivering up-to-date information about mosques in Kelantan. Developed for efficiency, it modernizes mosque management, providing details on prayer schedules, events, and community activities. The system fosters a connected environment, making it easy for administrators and the community to engage with mosque life. By embracing technology, it aims to preserve Kelantan's cultural and spiritual heritage while enhancing accessibility and community participation.
+             </p>
+             <a href="#" class="visit-button">VISIT US NOW</a>
+         </section>
+     </main>
      
-      <!-- our class -->
-      <div class="class">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage text_align_center">
-                     <h2>Our Skating Class</h2>
-                     <p>There are many variations of passages of Lorem</p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4 margi_bottom">
-                  <div class="class_box text_align_center">
-                     <i><img src="images/class1.png" alt="#"/></i>
-                     <h3>Skateboard</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alterationThere are many variations </p>
-                  </div>
-                  <a class="read_more" href="Javascript:void(0)">Read More</a>
-               </div>
-               <div class="col-md-4 margi_bottom">
-                  <div class="class_box blue text_align_center">
-                     <i><img src="images/class2.png" alt="#"/></i>
-                     <h3>Skateboard</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alterationThere are many variations </p>
-                  </div>
-                  <a class="read_more" href="Javascript:void(0)">Read More</a>
-               </div>
-               <div class="col-md-4 margi_bottom">
-                  <div class="class_box text_align_center">
-                     <i><img src="images/class3.png" alt="#"/></i>
-                     <h3>Skateboard</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alterationThere are many variations </p>
-                  </div>
-                  <a class="read_more" href="Javascript:void(0)">Read More</a>
-               </div>
-            </div>
-         </div>
+     
       </div>
+   
       <!--  footer -->
       <footer>
          <div class="footer">
-            <div class="container">
-               
-            </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2020 All Rights Reserved. Design by <a href="https://html.design/"> Free html Templates</a></p>
+                        <p>© 2023 All Rights Reserved. Design by AMANAT SDN BHD <a href=""> </a></p>
                      </div>
                   </div>
                </div>

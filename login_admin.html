@@ -104,13 +104,31 @@
                             <label for="password">Password:</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
+                        <button type="button" class="btn btn-primary" onclick="validateLoginAndNavigate()">Login</button>
                         </form>
                     </div>
                 </div>
             </div>
             </div>
         </div>
+        <script>
+            function validateLoginAndNavigate() {
+                // Add your login validation logic here
+                // For example, you can check if the user credentials are valid
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+        
+                // Example validation: Check if both username and password are not empty
+                if (username.trim() !== "" && password.trim() !== "") {
+                    // If validation is successful, navigate to another page
+                    // Replace 'target_page.html' with the actual page you want to navigate to
+                    window.location.href = 'statistic_admin.html';
+                } else {
+                    // Display an alert or handle validation failure in another way
+                    alert('Please enter both username and password.');
+                }
+            }
+        </script>
         <!-- end login admin -->
         <!--  footer -->
         <footer>

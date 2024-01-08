@@ -123,121 +123,121 @@
             color: #5e5d5e;
             font-size: 19px;
          }
-         main {
-    padding: 20px;
-}
+      main {
+         padding: 20px;
+      }
 
-section {
-    background: white;
-    margin: 50px 0;
-    padding: 90px;
-    border-radius: 8px;
-}
-#total-donations {
-    background-color: #fff;
-    padding: 30px;
-    text-align: center;
-    margin-top: 100px;
-}
+      section {
+         background: white;
+         margin: 50px 0;
+         padding: 90px;
+         border-radius: 8px;
+      }
+      #total-donations {
+         background-color: #fff;
+         padding: 30px;
+         text-align: center;
+         margin-top: 100px;
+      }
 
-#total-donations h2 {
-    color: #333;
-    font-size: 35px;
-    margin-bottom: 10px;
-}
+      #total-donations h2 {
+         color: #333;
+         font-size: 35px;
+         margin-bottom: 10px;
+      }
 
-#donation-amount-display {
-    color: #f0390f;
-    font-size: 35px;
-    font-weight: bold;
-    margin: 0;
-}
+      #donation-amount-display {
+         color: #f0390f;
+         font-size: 35px;
+         font-weight: bold;
+         margin: 0;
+      }
 
-.form-group {
-    margin-bottom: 1em;
-}
+      .form-group {
+         margin-bottom: 1em;
+      }
 
-.form-group label {
-    display: block;
-    margin-bottom: .5em;
-}
+      .form-group label {
+         display: block;
+         margin-bottom: .5em;
+      }
 
-.form-group input[type="text"],
-.form-group input[type="number"] {
-    width: 100%;
-    padding: 0.7em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+      .form-group input[type="text"],
+      .form-group input[type="number"] {
+         width: 100%;
+         padding: 0.7em;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+      }
 
-.form-group input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+      .form-group input[type="submit"] {
+         display: block;
+         width: 100%;
+         padding: 1em;
+         background: #28a745;
+         color: white;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+      }
 
-.form-group input[type="submit"]:hover {
-    background: #218838;
-}
+      .form-group input[type="submit"]:hover {
+         background: #218838;
+      }
 
-        
+
       /* Footer styling */
-.footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #f0390f; /* Set your desired background color */
-    text-align: center;
-    color: #fff; /* Set your desired text color */
-}
-.copyright p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 20px;
-}
+      .footer {
+         padding-top: 20px;
+         padding-bottom: 20px;
+         background-color: #f0390f; /* Set your desired background color */
+         text-align: center;
+         color: #fff; /* Set your desired text color */
+      }
+      .copyright p {
+         margin: 0;
+         font-size: 14px;
+         line-height: 20px;
+      }
 
-.copyright a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
+      .copyright a {
+         color: #fff;
+         text-decoration: none;
+         font-weight: bold;
+      }
 
-/* Add hover effect to the link */
-.copyright a:hover {
-    color: #3e0bce;
-}
-#success-message {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #307e33;
-    color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-}
+      /* Add hover effect to the link */
+      .copyright a:hover {
+         color: #3e0bce;
+      }
+      #success-message {
+         display: none;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         padding: 20px;
+         background-color: #307e33;
+         color: #fff;
+         text-align: center;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         z-index: 999;
+      }
 
-#success-message p {
-    margin: 0;
-    font-size: 18px;
-}
+      #success-message p {
+         margin: 0;
+         font-size: 18px;
+      }
 
-.close-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    color: #fff;
-}
+      .close-btn {
+         cursor: pointer;
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         font-size: 20px;
+         color: #fff;
+      }
    </style>
    <!-- body -->
    <body class="main-layout inner_page">
@@ -297,14 +297,14 @@ section {
       <!-- end header inner -->
       <!-- statistic -->
       <main>
-         <section class="statistic-container">
-            <br><h1 class="text_align_center">ADMIN - KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
+         <div id="update-mosques">
+            <h1 class="text_align_center">ADMIN - KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
             <h2 class="text_align_center">STATISTIC</h2>
-            <h2 class="text_align_center">UPDATE LIST OF MOSQUES</h2>
-         </section>
-
-         <section id="updatestatistic-form">
-            <form id="updatestatistic-form" onsubmit="handleSubmit(event)">
+         </div>
+ 
+         <div id="updatestatistic-form">
+            <h2>Update List Of Mosques</h2>
+            <form id="updatestatisticForm" onsubmit="handleSubmit(event)">
                <div class="form-group">
                   <label for="district">Select District:</label>
                   <select name="district" id="district" class="form-control" required>
@@ -313,35 +313,40 @@ section {
                      <option value="tanahmerah">Tanah Merah</option>
                      <option value="pasirputeh">Pasir Puteh</option>
                      <option value="kualakrai">Kuala Krai</option>
+                     <option value="guamusang">Gua Musang</option>
                      <option value="jeli">Jeli</option>
                      <option value="machang">Machang</option>
                      <option value="bachok">Bachok</option>
                      <option value="tumpat">Tumpat</option>
                   </select>
                </div>
-
+               
                <div class="form-group">
                   <label for="newCount">New Number of Mosques:</label>
-                  <input type="number" name="newCount" id="newCount" class="form-control" required>
+                  <input type="number" id="newCount" name="newCount" class="form-control" required>
                </div>
 
                <div class="form-group">
                   <label for="mosqueName">New Mosque Name:</label>
-                  <input type="text" name="mosqueName" id="mosqueName" class="form-control" required>
+                  <input type="text" id="mosqueName" name="mosqueName" class="form-control" required>
                </div>
 
                <div class="form-group">
                   <input type="submit" value="Update">
                </div>
-               <div class="success-message" style="display: none;">
-                     <div>
-                        <span class="close-btn" onclick="closePopup()">&times;</span>
-                        <p>Successfully Update!</p>
-                     </div>
+               <div id="success-message" style="display: none;">
+                  <div>
+                     <span class="close-btn" onclick="closePopup()">&times;</span>
+                     <p>Successfully Update!</p>
+                  </div>
+               </div>
+         
                </div>
             </form>
-         </section>
-      </main>
+             
+            </div>
+         </div>
+     </main>
       <!-- end statistic -->
       <!--  footer -->
       <footer>
@@ -381,10 +386,9 @@ section {
                document.getElementById('success-message').style.display = 'block';
              } else {
                // Handle invalid donation amount (e.g., show an error message)
-               alert('Please enter a valid donation amount.');
+               alert('Please enter a valid mosque number.');
             }
          }
-         
          // Function to close the success popup
          function closePopup() {
             // Close the success popup

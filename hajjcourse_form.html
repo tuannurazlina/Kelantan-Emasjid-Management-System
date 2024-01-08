@@ -147,7 +147,7 @@
                      </select>
                      <label for="additional_notes">Additional Notes:</label>
                      <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                     <button type="button" class="btn btn-primary" onclick="validateSubmit()">Submit</button>
+                     <button type="button" class="btn btn-primary" onclick="showSuccessPopup()">Submit</button>
                   </form>
                </div>
          </div>
@@ -174,5 +174,41 @@
          <script>
             AOS.init();
          </script>
+         <div id="successPopup" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Success!</h4>
+                  </div>
+                  <div class="modal-body">
+                     <p>Your form has been submitted successfully.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            function validateForm() {
+                var fullName = document.getElementById("full_name").value;
+                var email = document.getElementById("email").value;
+                var phone = document.getElementById("phone").value;
+                var courseType = document.getElementById("course_type").value;
+    
+                if (fullName.trim() === "" || email.trim() === "" || phone.trim() === "" || courseType.trim() === "") {
+                    alert("Please fill in all required fields.");
+                    return false;
+                }
+    
+                return true;
+            }
+    
+            // Optional: You can reset the form on successful submission
+            $('#successPopup').on('hidden.bs.modal', function () {
+               document.getElementById("full_name").value = "";
+               document.getElementById("email").value = "";
+               document.getElementById("phone").value = "";
+               document.getElementById("course_type").value = "";
+            });
+        </script>
       </body>
 </html>

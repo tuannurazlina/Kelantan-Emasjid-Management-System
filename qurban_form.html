@@ -150,7 +150,7 @@
                     <input type="number" id="quantity" name="quantity" min="1" required>
                     <label for="additional_notes">Additional Notes:</label>
                     <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                    <button type="submit">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="showSuccessPopup()">Submit</button>
                 </form>
             </div>
         </div>
@@ -176,6 +176,54 @@
         <script src="js/custom.js"></script>
         <script>
             AOS.init();
+        </script>
+        <div id="successPopup" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Success!</h4>
+                  </div>
+                  <div class="modal-body">
+                     <p>Your form has been submitted successfully.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            function showSuccessPopup() {
+                // Perform validation
+                if (validateForm()) {
+                    // Show the success popup
+                    $('#successPopup').modal('show');
+                }
+            }
+        
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var phone = document.getElementById("phone").value;
+                var qurbanType = document.getElementById("qurban_type").value;
+                var quantity = document.getElementById("quantity").value;
+        
+                // Check if any of the required fields are empty
+                if (name === "" || email === "" || phone === "" || qurbanType === "" || quantity === "") {
+                    alert("Please fill in all required fields.");
+                    return false;
+                }
+        
+                return true;
+            }
+        
+            // Optional: You can hide the popup on close
+            $('#successPopup').on('hidden.bs.modal', function () {
+                // Reset the form or perform any other actions needed
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("phone").value = "";
+                document.getElementById("qurban_type").value = "";
+                document.getElementById("quantity").value = "";
+            });
         </script>
     </body>
 </html>

@@ -8,7 +8,7 @@
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="viewport" content="initial-scale=1, maximum-scale=1">
          <!-- site metas -->
-         <title>Kursus Nikah Form</title>
+         <title>Aqiqah Form</title>
          <style>
             body {
                 font-family: Arial, sans-serif;
@@ -130,18 +130,20 @@
             </div>
          </div>
          <!-- end header inner -->
-         <!-- hajj -->
+         <!-- khatan -->
          <div class="statistic-container">
                <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
                <h2 class="text_align_center">Services</h2>
                <div class="container">
                   <a href="services.html" style="border: 1px solid #000; padding: 5px;">Back</a><br><br>
-                  <h2>Nikah Course Booking Form</h2>
-                  <form action="process_hajj_course_booking.php" method="post" onsubmit="return showSuccessPopup()">
+                  <h2>Khatan Booking Form</h2>
+                  <form action="process_khatan_booking.php" method="post" onsubmit="return showSuccessPopup()">
                      <label for="full_name">Full Name:</label>
                      <input type="text" id="full_name" name="full_name" required>
-                     <label for="email">Email:</label>
-                     <input type="email" id="email" name="email" required>
+                     <label for="address">Age:</label>
+                     <input type="text" id="age" name="age" required>
+                     <label for="guardian_full_name">Guardian Full Name:</label>
+                     <input type="text" id="guardian_full_name" name="guardian_full_name" required>
                      <label for="phone">Phone Number:</label>
                      <input type="tel" id="phone" name="phone" required>
                      <label for="additional_notes">Additional Notes:</label>
@@ -150,7 +152,7 @@
                   </form>
                </div>
          </div>
-         <!-- end hajj -->
+         <!-- end khatan -->
          <!--  footer -->
          <footer>
             <div class="copyright">

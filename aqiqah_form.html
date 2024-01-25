@@ -136,14 +136,33 @@
                   <form action="process_aqiqah_booking.php" method="post">
                      <label for="full_name">Full Name:</label>
                      <input type="text" id="full_name" name="full_name" required>
+                 
+                     <label for="ic">IC:</label>
+                     <input type="text" id="ic" name="ic" required>
+                 
                      <label for="address">Address:</label>
                      <textarea id="address" name="address" rows="4"></textarea>
+                 
                      <label for="phone">Phone Number:</label>
                      <input type="tel" id="phone" name="phone" required>
+                 
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email" required>
+                 
+                     <label for="aqiqah_type">Aqiqah Type:</label>
+                     <select id="aqiqah_type" name="aqiqah_type" required>
+                         <option value="cow">Cow</option>
+                         <option value="goat">Goat</option>
+                     </select>
+                 
+                     <label for="quantity">Quantity:</label>
+                     <input type="number" id="quantity" name="quantity" required>
+                 
                      <label for="additional_notes">Additional Notes:</label>
                      <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
+                 
                      <button type="submit">Submit</button>
-                  </form>
+                 </form>
                </div>
          </div>
          <!-- end aqiqah -->

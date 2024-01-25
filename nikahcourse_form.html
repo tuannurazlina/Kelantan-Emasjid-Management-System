@@ -126,32 +126,49 @@
             </div>
          </div>
          <!-- end header inner -->
-         <!-- hajj -->
+         <!-- nikah course -->
          <div class="statistic-container">
-               <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
-               <h2 class="text_align_center">Services</h2>
-               <div class="container">
-                  <a href="services.html">Back</a>
-                  <h2>Nikah Course Booking Form</h2>
-                  <form action="process_hajj_course_booking.php" method="post">
-                     <label for="full_name">Full Name:</label>
-                     <input type="text" id="full_name" name="full_name" required>
-                     <label for="email">Email:</label>
-                     <input type="email" id="email" name="email" required>
-                     <label for="phone">Phone Number:</label>
-                     <input type="tel" id="phone" name="phone" required>
-                     <label for="course_type">Course Type:</label>
-                     <select id="course_type" name="course_type" required>
-                           <option value="basic">Basic Hajj Course</option>
-                           <option value="advanced">Advanced Hajj Course</option>
-                     </select>
-                     <label for="additional_notes">Additional Notes:</label>
-                     <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                     <button type="submit">Submit</button>
-                  </form>
-               </div>
-         </div>
-         <!-- end hajj -->
+            <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
+            <h2 class="text_align_center">Services</h2>
+            <div class="container">
+               <a href="services.html">Back</a>
+               <h2>Nikah Course Booking Form</h2>
+               <form action="process_hajj_course_booking.php" method="post">
+                  <label for="full_name">Full Name:</label>
+                  <input type="text" id="full_name" name="full_name" required>
+         
+                  <label>Gender:</label>
+                  <label for="male">Male</label>
+                  <input type="radio" id="male" name="gender" value="male" required>
+                  <label for="female">Female</label>
+                  <input type="radio" id="female" name="gender" value="female" required>
+         
+                  <label for="ic">IC:</label>
+                  <input type="text" id="ic" name="ic" required>
+         
+                  <label for="address">Address:</label>
+                  <textarea id="address" name="address" rows="4" required></textarea>
+         
+                  <label for="phone">Phone Number:</label>
+                  <input type="tel" id="phone" name="phone" required>
+         
+                  <label for="date">Date:</label>
+                  <input type="date" id="date" name="date" required>
+         
+                  <label for="venue">Venue:</label>
+                  <select id="venue" name="venue" required>
+                     <option value="venue1">Venue 1</option>
+                     <option value="venue2">Venue 2</option>
+                  </select>
+         
+                  <label for="additional_notes">Additional Notes:</label>
+                  <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
+         
+                  <button type="submit">Submit</button>
+               </form>
+            </div>
+         </div>         
+         <!-- end nikah course -->
          <!--  footer -->
          <footer>
             <div class="copyright">

@@ -133,7 +133,7 @@
                <div class="container">
                   <a href="services.html">Back</a>
                   <h2>Pengurusan Jenazah Form</h2>
-                  <form action="process_zakat_application.php" method="post">               
+                  <form action="process_zakat_application.php" method="post" onsubmit="return showPopup()>               
                     <label for="full_name">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" required>
                 
@@ -179,5 +179,17 @@
          <script>
             AOS.init();
          </script>
+         <script>
+            function showPopup() {
+                // Display a pop-up message
+                alert("Submitted Successful!");
+    
+                // Redirect to the homepage
+                window.location.href = "your_homepage_url_here";
+    
+                // Prevent the form from submitting (optional, depending on your needs)
+                return false;
+            }
+        </script>
       </body>
 </html>

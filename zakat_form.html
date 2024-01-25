@@ -8,7 +8,7 @@
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="viewport" content="initial-scale=1, maximum-scale=1">
          <!-- site metas -->
-         <title>Zakat & Fidyah Form</title>
+         <title>Zakat Application Form</title>
          <style>
             body {
                 font-family: Arial, sans-serif;
@@ -126,20 +126,14 @@
             </div>
          </div>
          <!-- end header inner -->
-         <!-- zakatfidyah -->
+         <!-- zakat -->
          <div class="statistic-container">
                <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
                <h2 class="text_align_center">Services</h2>
                <div class="container">
                   <a href="services.html">Back</a>
-                  <h2>Zakat & Fidyah Form</h2>
-                  <form action="process_tahlil_booking.php" method="post">
-                    <label for="type">Type:</label>
-                    <select id="type" name="type" required>
-                        <option value="zakat">Zakat</option>
-                        <option value="fidyah">Fidyah</option>
-                    </select>
-                
+                  <h2>Zakat Application Form</h2>
+                  <form action="process_zakat_application.php" method="post">               
                     <label for="full_name">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" required>
                 
@@ -154,6 +148,27 @@
                 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
+
+                    <label for="income">Income (RM):</label>
+                    <input type="income" id="income" name="income" required>
+
+                    <label for="bank">Select Bank:</label>
+                    <select id="bank" name="bank" required>
+                        <option value="alliance_bank">Alliance Bank Malaysia Berhad</option>
+                        <option value="ambank">AmBank</option>
+                        <option value="bank_islam">Bank Islam Malaysia</option>
+                        <option value="bank_rakyat">Bank Rakyat</option>
+                        <option value="bsn">Bank Simpanan Nasional (BSN)</option>
+                        <option value="cimb">CIMB Group Holdings</option>
+                        <option value="hsbc">HSBC Bank Malaysia</option>
+                        <option value="hong_leong">Hong Leong Bank</option>
+                        <option value="maybank">Maybank</option>
+                        <option value="public_bank">Public Bank Berhad</option>
+                        <option value="rhb">RHB Bank</option>
+                    </select>
+
+                    <label for="accountnum">Account Number:</label>
+                    <input type="accountnum" id="accountnum" name="accountnum" required>
                 
                     <label for="additional_notes">Additional Notes:</label>
                     <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
@@ -164,7 +179,7 @@
                 
                </div>
          </div>
-         <!-- end zakatfidyah -->
+         <!-- end zakat -->
          <!--  footer -->
          <footer>
             <div class="copyright">

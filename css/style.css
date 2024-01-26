@@ -1226,3 +1226,28 @@ img {
 }
 
 /** end header **/
+
+/* Footer styling */
+.footer {
+     padding-top: 20px;
+     padding-bottom: 20px;
+     background-color: #f0390f; /* Set your desired background color */
+     text-align: center;
+     color: #fff; /* Set your desired text color */
+ }
+ .copyright p {
+     margin: 0;
+     font-size: 14px;
+     line-height: 20px;
+ }
+ 
+ .copyright a {
+     color: #fff;
+     text-decoration: none;
+     font-weight: bold;
+ }
+ 
+ /* Add hover effect to the link */
+ .copyright a:hover {
+     color: #3e0bce;
+ }

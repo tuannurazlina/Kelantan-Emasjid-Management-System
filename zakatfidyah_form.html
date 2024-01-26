@@ -8,7 +8,7 @@
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <meta name="viewport" content="initial-scale=1, maximum-scale=1">
          <!-- site metas -->
-         <title>Zakat Application Form</title>
+         <title>Zakat & Fidyah Form</title>
          <style>
             body {
                 font-family: Arial, sans-serif;
@@ -33,18 +33,19 @@
                 box-sizing: border-box;
             }
 
-            button {
-                background-color: #3498db;
-                color: white;
-                padding: 12px 20px;
-                border: 2px solid #2980b9; /* Fixed border size */
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
+            .button-custom {
+               border: 1px solid #000;
+               padding: 5px;
+               border-radius: 10px;
+               background-color: #f0f0f0;
+               color: #000;
+               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+
             }
 
-            button:hover {
-                background-color: #2980b9;
+            .button-custom:hover {
+               background-color: #000; /* Change to the desired hover background color */
+               color: #f0f0f0; /* Change to the desired hover text color */
             }
          </style>
          <meta name="keywords" content="">
@@ -131,26 +132,53 @@
                <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
                <h2 class="text_align_center">Services</h2>
                <div class="container">
-                  <a href="services.html">Back</a>
-                  <h2>Zakat Application Form</h2>
-                  <form action="process_zakat_application.php" method="post">               
+                  <a href="services.html" style="border: 1px solid #000; padding: 5px;">Back</a><br><br>
+                  <h2>Zakat/Fidyah Form</h2>
+                  <form action="process_zakat_application.php" method="post" onsubmit="return showSuccessPopup()">
+                     <label for="type">Type:</label>
+                     <select id="type" name="type" required onchange="toggleFields()">
+                         <option value="zakat">Zakat</option>
+                         <option value="fidyah">Fidyah</option>
+                     </select>       
+
                     <label for="full_name">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" required>
                 
                     <label for="ic">IC:</label>
                     <input type="text" id="ic" name="ic" required>
                 
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                
                     <label for="address">Address:</label>
                     <textarea id="address" name="address" rows="4"></textarea>
-                
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                                 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
 
-                    <label for="income">Income (RM):</label>
-                    <input type="income" id="income" name="income" required>
+                    <label for="venue">Venue:</label>
+                     <select id="venue" name="venue" required>
+                        <option value="masjid1">MASJID MUHAMMADI KOTA BHARU</option>
+                        <option value="masjid2">MASJID D'RAJA LONG YUNUS</option>
+                        <option value="masjid3">MASJID BANDAR SULTAN MUHAMMAD III</option>
+                        <option value="masjid4">MASJID JUBLI PERAK SULTAN ISMAIL PETRA</option>
+                        <option value="masjid5">MASJID ISMAIL PETRA</option>
+                        <option value="masjid6">MASJID MUKIM BATANG MERBAU</option>
+                        <option value="masjid7">MASJID IBRAHIMI</option>
+                        <option value="masjid8">MASJID MUKIM PADANG PAK AMAT</option>
+                        <option value="masjid9">MASJID BANDAR TENGKU MUHAMMAD FARIS PETRA</option>
+                        <option value="masjid10">MASJID ANNUR GUCHIL</option>
+                        <option value="masjid11">MASJID TENGKU MUHAMMAD FA-IZ PETRA</option>
+                        <option value="masjid12">MASJID RAZALEIGH</option>
+                        <option value="masjid13">MASJID SULTAN MUHAMMAD I</option>
+                        <option value="masjid14">MASJID AL-ABRAR AYER LANAS</option>
+                        <option value="masjid15">MASJID SULTAN YAHYA PETRA</option>
+                        <option value="masjid16">MASJID AR RAHMAN MUKIM GALANG PULAI CHONDONG</option>
+                        <option value="masjid17">MASJID MAHMOODI</option>
+                        <option value="masjid18">MASJID AR-RAHMANI MUKIM REPEK</option>
+                        <option value="masjid19">MASJID ISMAILI</option>
+                        <option value="masjid20">MASJID MUKIM WAKAF BHARU</option>
+                     </select>
 
                     <label for="bank">Select Bank:</label>
                     <select id="bank" name="bank" required>
@@ -167,16 +195,30 @@
                         <option value="rhb">RHB Bank</option>
                     </select>
 
-                    <label for="accountnum">Account Number:</label>
-                    <input type="accountnum" id="accountnum" name="accountnum" required>
+                    <div id="zakatFields" style="display: none;">
+                     <!-- Zakat Fields -->
+                     <label for="number_of_people">Number of People:</label>
+                     <input type="number" id="number_of_people" name="number_of_people">
+             
+                     <label for="zakat_rate">Zakat Rate (RM):</label>
+                     <input type="text" id="zakat_rate" name="zakat_rate">
+                     </div>
+                  
+                     <div id="fidyahFields" style="display: none;">
+                           <!-- Fidyah Fields -->
+                           <label for="number_of_fasting_days">Number of Fasting Days:</label>
+                           <input type="number" id="number_of_fasting_days" name="number_of_fasting_days">
+                  
+                           <button type="button" class="button-custom" onclick="calculateFidyah()">Calculate</button>
+                           <label for="calculation_amount">Calculation Amount: (**Fidyah Rate RM1.75/Day Equivalent to a cup of rice (675 grams))</label>
+                           <input type="text" id="calculation_amount" name="calculation_amount" readonly>
+                     </div>
+
                 
-                    <label for="additional_notes">Additional Notes:</label>
-                    <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                
-                    <button type="submit">Submit</button>
-                </form>
-                
-                
+                    <br><br>
+                  
+                  <button type="submit" class="button-custom">Submit</button>
+                </form>                               
                </div>
          </div>
          <!-- end zakat -->
@@ -197,6 +239,41 @@
          <script src="js/jquery.min.js"></script>
          <script src="js/bootstrap.bundle.min.js"></script>
          <script src="js/jquery-3.0.0.min.js"></script>
+         <script>
+            function showSuccessPopup() {
+               // Perform form submission logic here (e.g., AJAX request)
+         
+               // Show a pop-up message upon successful submission
+               alert("Form submitted successfully!");
+
+               // Redirect to another page (replace 'your_destination_page.html' with the actual page URL)
+               window.location.href = 'services.html';
+         
+               // Prevent the form from actually submitting (comment out this line if you want to proceed with the form submission)
+               return false;
+            }
+         </script>
+         <script>
+            function toggleFields() {
+                var selectedType = document.getElementById("type").value;
+                var zakatFields = document.getElementById("zakatFields");
+                var fidyahFields = document.getElementById("fidyahFields");
+        
+                if (selectedType === "zakat") {
+                    zakatFields.style.display = "block";
+                    fidyahFields.style.display = "none";
+                } else if (selectedType === "fidyah") {
+                    zakatFields.style.display = "none";
+                    fidyahFields.style.display = "block";
+                }
+            }
+        
+            function calculateFidyah() {
+                var numberOfFastingDays = parseFloat(document.getElementById("number_of_fasting_days").value);
+                var calculationAmount = numberOfFastingDays * 1.75;
+                document.getElementById("calculation_amount").value = calculationAmount.toFixed(2);
+            }
+        </script>
          <!-- sidebar -->
          <script src="js/custom.js"></script>
          <script>

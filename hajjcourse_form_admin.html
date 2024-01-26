@@ -126,50 +126,65 @@
             </div>
          </div>
          <!-- end header inner -->
-         <!-- hajj -->
-         <div class="statistic-container">
-               <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
-               <h2 class="text_align_center">HAJJ</h2>
-               <div class="container">
-                  <a href="hajj.html">Back</a>
-                  <h2>Hajj Course Booking Form</h2>
-                  <form action="process_hajj_course_booking.php" method="post">
-                     <label for="full_name">Full Name:</label>
-                     <input type="text" id="full_name" name="full_name" required>
-                     <label for="email">Email:</label>
-                     <input type="email" id="email" name="email" required>
-                     <label for="phone">Phone Number:</label>
-                     <input type="tel" id="phone" name="phone" required>
-                     <label for="venue">Venue:</label>
-                     <select id="venue" name="venue" required>
-                        <option value="masjid1">MASJID MUHAMMADI KOTA BHARU</option>
-                        <option value="masjid2">MASJID D'RAJA LONG YUNUS</option>
-                        <option value="masjid3">MASJID BANDAR SULTAN MUHAMMAD III</option>
-                        <option value="masjid4">MASJID JUBLI PERAK SULTAN ISMAIL PETRA</option>
-                        <option value="masjid5">MASJID ISMAIL PETRA</option>
-                        <option value="masjid6">MASJID MUKIM BATANG MERBAU</option>
-                        <option value="masjid7">MASJID IBRAHIMI</option>
-                        <option value="masjid8">MASJID MUKIM PADANG PAK AMAT</option>
-                        <option value="masjid9">MASJID BANDAR TENGKU MUHAMMAD FARIS PETRA</option>
-                        <option value="masjid10">MASJID ANNUR GUCHIL</option>
-                        <option value="masjid11">MASJID TENGKU MUHAMMAD FA-IZ PETRA</option>
-                        <option value="masjid12">MASJID RAZALEIGH</option>
-                        <option value="masjid13">MASJID SULTAN MUHAMMAD I</option>
-                        <option value="masjid14">MASJID AL-ABRAR AYER LANAS</option>
-                        <option value="masjid15">MASJID SULTAN YAHYA PETRA</option>
-                        <option value="masjid16">MASJID AR RAHMAN MUKIM GALANG PULAI CHONDONG</option>
-                        <option value="masjid17">MASJID MAHMOODI</option>
-                        <option value="masjid18">MASJID AR-RAHMANI MUKIM REPEK</option>
-                        <option value="masjid19">MASJID ISMAILI</option>
-                        <option value="masjid20">MASJID MUKIM WAKAF BHARU</option>
-                     </select>
-                     <label for="additional_notes">Additional Notes:</label>
-                     <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                     <button type="button" class="btn btn-primary" onclick="showSuccessPopup()">Submit</button>
-                  </form>
-               </div>
-         </div>
-         <!-- end hajj -->
+        <!-- hajj course form -->
+      <div class="statistic-container">
+        <br><h1 class="text_align_center">ADMIN - KELANTAN E-MASJID MANAGEMENT SYSTEM</h1><br>
+        <h2 class="text_align_center">HAJJ</h2><br>
+        <div class="table-container">
+           <table class="fixed-table">
+              <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
+                 <thead>
+                    <tr>
+                       <th style="border: 1px solid #ddd;">FULL NAME</th>
+                       <th style="border: 1px solid #ddd;">EMAIL</th>
+                       <th style="border: 1px solid #ddd;">PHONE NUMBER</th>
+                       <th style="border: 1px solid #ddd;">VENUE</th>
+                       <th style="border: 1px solid #ddd;">ADDITIONAL NOTES</th>
+                       <th style="border: 1px solid #ddd;">ACTION</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                        <td style="text-align: left;">TUAN NUR AZLINA BINTI TUAN IBRAHIM</td>
+                        <td style="text-align: left;">tuannurazlina@gmail.com</td>
+                        <td style="text-align: left;">016-9351753</td>
+                        <td style="text-align: left;">MASJID MUHAMMADI KOTA BHARU</td>
+                        <td style="text-align: left;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">NUR ADRIANA QAISARA BINTI AZAHAR</td>
+                        <td style="text-align: left;">nuradrianaqaisara@gmail.com</td>
+                        <td style="text-align: left;">011-31254771</td>
+                        <td style="text-align: left;">MASJID D'RAJA LONG YUNUS</td>
+                        <td style="text-align: left;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">NIK ASYRANI ASNA BINTI NIK MOHD ASRI</td>
+                        <td style="text-align: left;">nikasyraniasna@gmail.com</td>
+                        <td style="text-align: left;">011-10502882</td>
+                        <td style="text-align: left;">MASJID BANDAR SULTAN MUHAMMAD III</td>
+                        <td style="text-align: left;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">MUHAMMAD AIZAQ BIN AZMAN</td>
+                        <td style="text-align: left;">muhammadaizaq@gmail.com</td>
+                        <td style="text-align: left;">016-8164592</td>
+                        <td style="text-align: left;">MASJID JUBLI PERAK SULTAN ISMAIL PETRA</td>
+                        <td style="text-align: left;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">MAHIRAH BINTI MAZLAN</td>
+                        <td style="text-align: left;">mahirah@gmail.com</td>
+                        <td style="text-align: left;">014-2115059</td>
+                        <td style="text-align: left;">MASJID ISMAIL PETRA</td>
+                        <td style="text-align: left;"></td>
+                    </tr>
+                 </tbody>
+              </table>
+           </table>
+        </div>
+     </div>
+     <!-- end admin - hajj course form -->
          <!--  footer -->
          <footer>
             <div class="copyright">

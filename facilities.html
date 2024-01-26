@@ -27,10 +27,47 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
       <style>
-        /* Add custom styles for button hover color change */
-        .hover-color-change:hover {
+         /* Add custom styles for button hover color change */
+         .hover-color-change:hover {
            background-color: red; /* Change to the desired color */
-        }
+         }
+
+         .text_align_center {
+            text-align: center;
+         }
+
+         .img-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+         }
+
+         .img-wrapper {
+            position: relative;
+         }
+
+         .img-wrapper img {
+            max-width: 300px;
+            margin: 0 10px 10px 0;
+            cursor: pointer;
+         }
+
+         .description {
+            display: none;
+            text-align: left;
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            max-width: 250px;
+            transition: all 0.3s ease-out;
+         }
+
+         .img-wrapper:hover .description,
+         .img-wrapper.active .description {
+            display: block;
+            max-height: 1000px;
+         }
      </style>
    </head>
    <!-- body -->
@@ -77,7 +114,7 @@
                                 <a class="nav-link" href="infaq.html">Infaq</a>
                              </li>
                              <li class="nav-item">
-                                <a class="nav-link" href="#">Facilities</a>
+                                <a class="nav-link" href="facilities.html">Facilities</a>
                              </li>
                         </ul>
                      </div>
@@ -96,20 +133,33 @@
       <!-- facilities -->
       <div class="statistic-container">
          <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
-         <h2 class="text_align_center">FACILITIES</h2>
-        
-         <div class="text_align_center mt-5"> <!-- Adjust the margin-top value as needed -->
-            <div class="mb-5">
-               <a href="eaduan_form.html" class="btn btn-light btn-outline-dark btn-lg hover-color-change">E-ADUAN</a>
-            </div>
-            <div class="mb-5">
-               <a href="library.html" class="btn btn-light btn-outline-dark btn-lg hover-color-change">LIBRARY</a>
-            </div>
-            <div>
-               <a href="pasystem_form.html" class="btn btn-light btn-outline-dark btn-lg hover-color-change">PA SYSTEM</a>
+         <h2 class="text_align_center">FACILITIES</h2> 
+         <div class="text_align_center mt-3">
+            <div class="img-container">
+               <!-- Image 1 -->
+               <div class="img-wrapper">
+                  <img src="images/g1.jpg" alt="Image 1" class="img-fluid mx-3 mb-3" onclick="toggleDescription('description1')">
+                  <div id="description1" class="description">Auditorium yang berada di aras LG boleh memuatkan sehingga 250 orang. Ia digunakan untuk program/aktiviti anjuran Masjid sendiri mahupun agensi luar sepanjang tahun. Ia disertakan kemudahan penghawa dingin dan peralatan P.A. System.</div>
+               </div>
+         
+               <!-- Image 2 -->
+               <div class="img-wrapper">
+                  <img src="images/g2.jpg" alt="Image 2" class="img-fluid mx-3 mb-3" onclick="toggleDescription('description2')">
+                  <div id="description2" class="description">Dewan Makan yang berada di aras LG boleh memuatkan sehingga 250 orang. Ia digunakan untuk jamuan makan bagi program/aktiviti anjuran di Masjid. Ia disertakan dengan kemudahan penghawa dingin, kerusi dan meja makan</div>
+               </div>
+         
+               <!-- Image 3 -->
+               <div class="img-wrapper">
+                  <img src="images/g3.jpg" alt="Image 3" class="img-fluid mx-3 mb-3" onclick="toggleDescription('description3')">
+                  <div id="description3" class="description">Dewan Nikah yang berada di aras LG boleh memuatkan sehingga 25 orang. Ia digunakan untuk pernikahan di Masjid. Ia disertakan dengan kemudahan penghawa dingin</div>
+               </div>
             </div>
          </div>
-      </div>
+         <div class="text_align_center mt-3">
+            <a href="facilities_form.html" class="btn btn-light btn-outline-dark btn-lg hover-color-change mr-5">APPLICATION FORM</a>
+            <a href="eaduan_form.html" class="btn btn-light btn-outline-dark btn-lg hover-color-change">E-ADUAN</a>
+         </div>
+      </div>              
       <!-- end facilities -->
       <!--  footer -->
       <footer>
@@ -126,6 +176,17 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+      <script>
+         function toggleDescription(descriptionId) {
+            var descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(function (desc) {
+               desc.parentNode.classList.remove('active');
+            });
+      
+            var clickedDesc = document.getElementById(descriptionId);
+            clickedDesc.parentNode.classList.add('active');
+         }
+      </script>
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>

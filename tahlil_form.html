@@ -33,18 +33,19 @@
                 box-sizing: border-box;
             }
 
-            button {
-                background-color: #3498db;
-                color: white;
-                padding: 12px 20px;
-                border: 2px solid #2980b9; /* Fixed border size */
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
+            .button-custom {
+               border: 1px solid #000;
+               padding: 5px;
+               border-radius: 10px;
+               background-color: #f0f0f0;
+               color: #000;
+               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+
             }
 
-            button:hover {
-                background-color: #2980b9;
+            .button-custom:hover {
+               background-color: #000; /* Change to the desired hover background color */
+               color: #f0f0f0; /* Change to the desired hover text color */
             }
          </style>
          <meta name="keywords" content="">
@@ -131,9 +132,9 @@
                <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
                <h2 class="text_align_center">Services</h2>
                <div class="container">
-                  <a href="services.html">Back</a>
+                  <a href="services.html" style="border: 1px solid #000; padding: 5px;">Back</a><br><br>
                   <h2>Tahlil Booking Form</h2>
-                  <form action="process_tahlil_booking.php" method="post">
+                  <form action="process_tahlil_booking.php" method="post" onsubmit="return showSuccessPopup()">
                     <label for="full_name">Full Name:</label>
                     <input type="text" id="full_name" name="full_name" required>
                 
@@ -146,13 +147,36 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 
+                    <label for="venue">Venue:</label>
+                    <select id="venue" name="venue" required>
+                       <option value="masjid1">MASJID MUHAMMADI KOTA BHARU</option>
+                       <option value="masjid2">MASJID D'RAJA LONG YUNUS</option>
+                       <option value="masjid3">MASJID BANDAR SULTAN MUHAMMAD III</option>
+                       <option value="masjid4">MASJID JUBLI PERAK SULTAN ISMAIL PETRA</option>
+                       <option value="masjid5">MASJID ISMAIL PETRA</option>
+                       <option value="masjid6">MASJID MUKIM BATANG MERBAU</option>
+                       <option value="masjid7">MASJID IBRAHIMI</option>
+                       <option value="masjid8">MASJID MUKIM PADANG PAK AMAT</option>
+                       <option value="masjid9">MASJID BANDAR TENGKU MUHAMMAD FARIS PETRA</option>
+                       <option value="masjid10">MASJID ANNUR GUCHIL</option>
+                       <option value="masjid11">MASJID TENGKU MUHAMMAD FA-IZ PETRA</option>
+                       <option value="masjid12">MASJID RAZALEIGH</option>
+                       <option value="masjid13">MASJID SULTAN MUHAMMAD I</option>
+                       <option value="masjid14">MASJID AL-ABRAR AYER LANAS</option>
+                       <option value="masjid15">MASJID SULTAN YAHYA PETRA</option>
+                       <option value="masjid16">MASJID AR RAHMAN MUKIM GALANG PULAI CHONDONG</option>
+                       <option value="masjid17">MASJID MAHMOODI</option>
+                       <option value="masjid18">MASJID AR-RAHMANI MUKIM REPEK</option>
+                       <option value="masjid19">MASJID ISMAILI</option>
+                       <option value="masjid20">MASJID MUKIM WAKAF BHARU</option>
+                    </select>
+
                     <label for="tahlil_name">List the Arwah Name:</label>
                     <textarea id="arwah_name" name="arwah_name" rows="4"></textarea>
-                
-                    <label for="additional_notes">Additional Notes:</label>
-                    <textarea id="additional_notes" name="additional_notes" rows="4"></textarea>
-                
-                    <button type="submit">Submit</button>
+
+                    <br><br>
+                                                   
+                    <button type="submit" class="button-custom">Submit</button>
                   </form>
                </div>
          </div>
@@ -174,6 +198,20 @@
          <script src="js/jquery.min.js"></script>
          <script src="js/bootstrap.bundle.min.js"></script>
          <script src="js/jquery-3.0.0.min.js"></script>
+         <script>
+            function showSuccessPopup() {
+               // Perform form submission logic here (e.g., AJAX request)
+         
+               // Show a pop-up message upon successful submission
+               alert("Form submitted successfully!");
+
+               // Redirect to another page (replace 'your_destination_page.html' with the actual page URL)
+               window.location.href = 'services.html';
+         
+               // Prevent the form from actually submitting (comment out this line if you want to proceed with the form submission)
+               return false;
+            }
+         </script>
          <!-- sidebar -->
          <script src="js/custom.js"></script>
          <script>

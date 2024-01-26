@@ -33,18 +33,19 @@
                 box-sizing: border-box;
             }
 
-            button {
-                background-color: #3498db;
-                color: white;
-                padding: 12px 20px;
-                border: 2px solid #2980b9; /* Fixed border size */
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
+            .button-custom {
+               border: 1px solid #000;
+               padding: 5px;
+               border-radius: 10px;
+               background-color: #f0f0f0;
+               color: #000;
+               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+
             }
 
-            button:hover {
-                background-color: #2980b9;
+            .button-custom:hover {
+               background-color: #000; /* Change to the desired hover background color */
+               color: #f0f0f0; /* Change to the desired hover text color */
             }
          </style>
          <meta name="keywords" content="">
@@ -131,9 +132,9 @@
             <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
             <h2 class="text_align_center">Services</h2>
             <div class="container">
-               <a href="services.html">Back</a>
-               <h2>Nikah Course Booking Form</h2>
-               <form action="process_hajj_course_booking.php" method="post">
+               <a href="services.html" style="border: 1px solid #000; padding: 5px;">Back</a><br><br>
+               <h2>Kursus Nikah Booking Form</h2>
+               <form action="process_hajj_course_booking.php" method="post" onsubmit="return showSuccessPopup()">
                   <label for="full_name">Full Name:</label>
                   <input type="text" id="full_name" name="full_name" required>
          
@@ -178,7 +179,10 @@
                      <option value="masjid19">MASJID ISMAILI</option>
                      <option value="masjid20">MASJID MUKIM WAKAF BHARU</option>
                   </select>
-                  <button type="submit">Submit</button>
+
+                  <br><br>
+                  
+                  <button type="submit" class="button-custom">Submit</button>
                </form>
             </div>
          </div>         
@@ -200,6 +204,20 @@
          <script src="js/jquery.min.js"></script>
          <script src="js/bootstrap.bundle.min.js"></script>
          <script src="js/jquery-3.0.0.min.js"></script>
+         <script>
+            function showSuccessPopup() {
+               // Perform form submission logic here (e.g., AJAX request)
+         
+               // Show a pop-up message upon successful submission
+               alert("Form submitted successfully!");
+
+               // Redirect to another page (replace 'your_destination_page.html' with the actual page URL)
+               window.location.href = 'services.html';
+         
+               // Prevent the form from actually submitting (comment out this line if you want to proceed with the form submission)
+               return false;
+            }
+         </script>
          <!-- sidebar -->
          <script src="js/custom.js"></script>
          <script>

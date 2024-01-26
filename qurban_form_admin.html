@@ -33,18 +33,19 @@
                 box-sizing: border-box;
             }
 
-            button {
-                background-color: #3498db;
-                color: white;
-                padding: 12px 20px;
-                border: 2px solid #2980b9; /* Fixed border size */
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
+            .button-custom {
+               border: 1px solid #000;
+               padding: 5px;
+               border-radius: 10px;
+               background-color: #f0f0f0;
+               color: #000;
+               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+
             }
 
-            button:hover {
-                background-color: #2980b9;
+            .button-custom:hover {
+               background-color: #000; /* Change to the desired hover background color */
+               color: #f0f0f0; /* Change to the desired hover text color */
             }
          </style>
          <meta name="keywords" content="">
@@ -129,7 +130,7 @@
         <!-- hajj course form -->
       <div class="statistic-container">
         <br><h1 class="text_align_center">ADMIN - KELANTAN E-MASJID MANAGEMENT SYSTEM</h1><br>
-        <h2 class="text_align_center">HAJJ</h2><br>
+        <h2 class="text_align_center">LIST OF QURBAN APPLICATION</h2><br>
         <div class="table-container">
            <table class="fixed-table">
               <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
@@ -141,7 +142,6 @@
                        <th style="border: 1px solid #ddd;">QURBAN TYPE</th>
                        <th style="border: 1px solid #ddd;">QUANTITY</th>
                        <th style="border: 1px solid #ddd;">VENUE</th>
-                       <th style="border: 1px solid #ddd;">ADDITIONAL NOTES</th>
                        <th style="border: 1px solid #ddd;">ACTION</th>
                     </tr>
                  </thead>
@@ -153,7 +153,14 @@
                         <td style="text-align: left;">Cow</td>
                         <td style="text-align: left;">1</td>
                         <td style="text-align: left;">MASJID MUHAMMADI KOTA BHARU</td>
-                        <td style="text-align: left;"></td>
+                        <td style="text-align: center;">
+                            <label style="margin-right: 10px;">
+                                <input type="radio" name="action_TUAN NUR AZLINA BINTI TUAN IBRAHIM" value="accept"> Accept
+                            </label>
+                            <label>
+                                <input type="radio" name="action_TUAN NUR AZLINA BINTI TUAN IBRAHIM" value="reject"> Reject
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">NUR ADRIANA QAISARA BINTI AZAHAR</td>
@@ -162,7 +169,14 @@
                         <td style="text-align: left;">Goat</td>
                         <td style="text-align: left;">2</td>
                         <td style="text-align: left;">MASJID D'RAJA LONG YUNUS</td>
-                        <td style="text-align: left;"></td>
+                        <td style="text-align: center;">
+                            <label style="margin-right: 10px;">
+                                <input type="radio" name="action_NUR ADRIANA QAISARA BINTI AZAHAR" value="accept"> Accept
+                            </label>
+                            <label>
+                                <input type="radio" name="action_NUR ADRIANA QAISARA BINTI AZAHAR" value="reject"> Reject
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">NIK ASYRANI ASNA BINTI NIK MOHD ASRI</td>
@@ -171,7 +185,14 @@
                         <td style="text-align: left;">Sheep</td>
                         <td style="text-align: left;">1</td>
                         <td style="text-align: left;">MASJID BANDAR SULTAN MUHAMMAD III</td>
-                        <td style="text-align: left;"></td>
+                        <td style="text-align: center;">
+                            <label style="margin-right: 10px;">
+                                <input type="radio" name="action_NIK ASYRANI ASNA BINTI NIK MOHD ASRI" value="accept"> Accept
+                            </label>
+                            <label>
+                                <input type="radio" name="action_NIK ASYRANI ASNA BINTI NIK MOHD ASRI" value="reject"> Reject
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">MUHAMMAD AIZAQ BIN AZMAN</td>
@@ -180,7 +201,14 @@
                         <td style="text-align: left;">Cow</td>
                         <td style="text-align: left;">2</td>
                         <td style="text-align: left;">MASJID JUBLI PERAK SULTAN ISMAIL PETRA</td>
-                        <td style="text-align: left;"></td>
+                        <td style="text-align: center;">
+                            <label style="margin-right: 10px;">
+                                <input type="radio" name="action_MUHAMMAD AIZAQ BIN AZMAN" value="accept"> Accept
+                            </label>
+                            <label>
+                                <input type="radio" name="action_MUHAMMAD AIZAQ BIN AZMAN" value="reject"> Reject
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td style="text-align: left;">MAHIRAH BINTI MAZLAN</td>
@@ -189,11 +217,19 @@
                         <td style="text-align: left;">Goat</td>
                         <td style="text-align: left;">1</td>
                         <td style="text-align: left;">MASJID ISMAIL PETRA</td>
-                        <td style="text-align: left;"></td>
+                        <td style="text-align: center;">
+                            <label style="margin-right: 10px;">
+                                <input type="radio" name="action_MAHIRAH BINTI MAZLAN" value="accept"> Accept
+                            </label>
+                            <label>
+                                <input type="radio" name="action_MAHIRAH BINTI MAZLAN" value="reject"> Reject
+                            </label>
+                        </td>
                     </tr>
                  </tbody>
               </table>
            </table>
+           <button type="button" class="button-custom" onclick="processActions()">Submit</button>
         </div>
      </div>
      <!-- end admin - hajj course form -->
@@ -254,6 +290,24 @@
                document.getElementById("phone").value = "";
                document.getElementById("course_type").value = "";
             });
+        </script>
+        <script>
+            function processActions() {
+                var selectedAction = document.querySelector('input[name^="action_"]:checked');
+        
+                if (selectedAction) {
+                    var fullName = selectedAction.name.replace("action_", "");
+                    var action = selectedAction.value;
+                    // Implement logic to handle the selected action
+                    if (action === 'accept') {
+                        alert("Application for " + fullName + " accepted.");
+                    } else if (action === 'reject') {
+                        alert("Application for " + fullName + " rejected.");
+                    }
+                } else {
+                    alert("Please select an action for at least one application.");
+                }
+            }
         </script>
       </body>
 </html>

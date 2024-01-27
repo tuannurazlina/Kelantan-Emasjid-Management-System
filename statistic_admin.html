@@ -1,169 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-         <!-- basic -->
-         <meta charset="utf-8">
-         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-         <!-- mobile metas -->
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-         <!-- site metas -->
-         <title>Admin - Kelantan E-Masjid Management System</title>
-         <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-            }
-    
-            .container {
-                max-width: 600px;
-                margin: auto;
-                text-align: left;
-            }
-    
-            label {
-                display: block;
-                margin-bottom: 8px;
-            }
-    
-            input, select, textarea {
-                width: 100%;
-                padding: 8px;
-                margin-bottom: 16px;
-                box-sizing: border-box;
-            }
+      
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Kelantan E-Masjid Management System</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <style>
+         .navigation.navbar {
+            float: center;
+            padding: 30px;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link {
+            padding: 10px 20px;
+            color: #2b2b2b;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 400;
+            border-radius: 20px;
+            text-transform: uppercase;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link:focus,
+      .navigation.navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+            background: #f0390f;
+         }
+      .navigation.navbar-dark .navbar-nav .active>.nav-link,
+      .navigation.navbar-dark .navbar-nav .nav-link.active,
+      .navigation.navbar-dark .navbar-nav .nav-link.show,
+      .navigation.navbar-dark .navbar-nav .show>.nav-link {
+            color: #fff;
+            background: #f0390f;
+         }
 
-            .button-custom {
-               border: 1px solid #000;
-               padding: 5px;
-               border-radius: 10px;
-               background-color: #f0f0f0;
-               color: #000;
-               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+      
+         #popup-form {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(236, 233, 28, 0.966);
+      z-index: 1000;
+    }
+    
+  input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
 
-            }
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
 
-            .button-custom:hover {
-               background-color: #000; /* Change to the desired hover background color */
-               color: #f0f0f0; /* Change to the desired hover text color */
-            }
-         </style>
-         <meta name="keywords" content="">
-         <meta name="description" content="">
-         <meta name="author" content="">
-         <!-- bootstrap css -->
-         <link rel="stylesheet" href="css/bootstrap.min.css">
-         <!-- style css -->
-         <link rel="stylesheet" href="css/style.css">
-         <!-- Responsive-->
-         <link rel="stylesheet" href="css/responsive.css">
-         <!-- fevicon -->
-         <link rel="icon" href="images/fevicon.png" type="image/gif" />
-         <!-- Tweaks for older IEs-->
-         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-         <!--[if lt IE 9]>
-         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      </head>
-      <!-- body -->
-      <body class="main-layout inner_page">
-         <!-- header -->
-         <div class="header">
-            <div class="container-fluid">
-                  <div class="row d_flex">
-                     <div class=" col-md-2 col-sm-3 col logo_section">
-                           <div class="full">
-                              <div class="center-desk">
-                                 <div class="logo">
-                                 <a href="index_admin.html"><img src="images/logo.png" alt="#" /></a>
-                              </div>
+input [type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input [type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+input, button {
+      margin-bottom: 10px;
+    }
+
+      </style>
+   <!-- body -->
+   <body class="main-layout inner_page">
+      <!-- header -->
+      <div class="header">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class=" col-md-2 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-8 col-sm-12">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item">
-                                 <a class="nav-link" href="index_admin.html">Home</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="statistic_admin.html">Statistic</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="activities_admin.html">Activities</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="services_admin.html">Services</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="hajj_admin.html">Hajj</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="ramadhan_admin.html">Ramadhan</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="infaq_admin.html">Infaq</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="facilities_admin.html">Facilities</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-                  
+               </div>
+               <div class="col-md-8 col-sm-12">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item">
+                              <a class="nav-link" href="index.html">Home</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="statistic.html">Statistic</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="activities.html">Activities</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="services.html">Services</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="hajj.html">Hajj</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="ramadhan.html">Ramadhan</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="infaq.html">Infaq</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="facilities.html">Facilities</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+               <div class="col-md-2">
+                  <ul class="email text_align_right">
+                     <li class="d_none">
+                        <a href="login_admin.html">
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>
-         <!-- end header inner -->
-         <!-- admin - statistic -->
-         <div class="statistic-container">
-            <br><h1 class="text_align_center">ADMIN - KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
-            <h2 class="text_align_center">STATISTIC</h2>
-            <div class="container">
-               <h2>LIST OF MOSQUES</h2>
-               <form id="updatestatisticForm" onsubmit="handleSubmit(event)">
-                  <div class="form-group">
-                     <label for="district">Select District:</label>
-                     <select name="district" id="district" class="form-control" required>
-                        <option value="kotabharu">Kota Bharu</option>
-                        <option value="pasirmas">Pasir Mas</option>
-                        <option value="tanahmerah">Tanah Merah</option>
-                        <option value="pasirputeh">Pasir Puteh</option>
-                        <option value="kualakrai">Kuala Krai</option>
-                        <option value="guamusang">Gua Musang</option>
-                        <option value="jeli">Jeli</option>
-                        <option value="machang">Machang</option>
-                        <option value="bachok">Bachok</option>
-                        <option value="tumpat">Tumpat</option>
-                     </select>
-                  </div>
-                  
-                  <div class="form-group">
-                     <label for="newCount">New Number of Mosques:</label>
-                     <input type="number" id="newCount" name="newCount" class="form-control" required>
-                  </div>
-   
-                  <div class="form-group">
-                     <label for="mosqueName">New Mosque Name:</label>
-                     <input type="text" id="mosqueName" name="mosqueName" class="form-control" required>
-                  </div>
-   
-                  <div class="form-group">
-                     <button type="submit" class="button-custom">Update</button>
-                  </div>
-                  <div id="success-message" style="display: none;">
-                     <div>
-                        <span class="close-btn" onclick="closePopup()">&times;</span>
-                        <p>Successfully Update!</p>
-                  </div>
-         <!-- end admin - statistic -->
-         <!--  footer -->
-         <footer>
+      </div>
+      <!-- end header inner -->
+      <!-- statistic -->
+      <div class="statistic-container">
+         <br><h1 class="text_align_center">KELANTAN E-MASJID MANAGEMENT SYSTEM</h1>
+         <h2 class="text_align_center">STATISTIC</h2>
+         <br>
+         <h2 class="text_align_center">LIST OF MOSQUES</h2>
+            <div class="table-container">
+            <table class="fixed-table">
+               <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
+                  <thead>
+                     <tr>
+                        <th style="border: 1px solid #ddd;">NO</th>
+                        <th style="border: 1px solid #ddd;">DISTRICT</th>
+                        <th style="border: 1px solid #ddd;">TOTAL</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>1</td>
+                        <td style="text-align: left;">KOTA BHARU</td>
+                        <td><a href="kotabharu.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>2</td>
+                        <td style="text-align: left;">PASIR MAS</td>
+                        <td><a href="pasirmas.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>3</td>
+                        <td style="text-align: left;">TANAH MERAH</td>
+                        <td><a href="tanahmerah.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>4</td>
+                        <td style="text-align: left;">PASIR PUTEH</td>
+                        <td><a href="pasirputeh.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>5</td>
+                        <td style="text-align: left;">KUALA KRAI</td>
+                        <td><a href="kualakrai.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>6</td>
+                        <td style="text-align: left;">GUA MUSANG</td>
+                        <td><a href="guamusang.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>7</td>
+                        <td style="text-align: left;">JELI</td>
+                        <td><a href="jeli.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>8</td>
+                        <td style="text-align: left;">MACHANG</td>
+                        <td><a href="machang.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>9</td>
+                        <td style="text-align: left;">BACHOK</td>
+                        <td><a href="bachok.html">10</a></td>
+                     </tr>
+                     <tr>
+                        <td>10</td>
+                        <td style="text-align: left;">TUMPAT</td>
+                        <td><a href="tumpat.html">10</a></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </table>
+         </div>
+      </div>
+      <!-- end statistic -->
+
+      <div class="text_align_center" >
+         <button onclick="showPopup()"  style="background-color: #04AA6D;color: white;
+                padding: 12px 20px;">Add Mosque</button>  
+     </div>
+
+      <!--  footer -->
+      <footer>
             <div class="copyright">
                <div class="container">
                   <div class="row">
@@ -173,30 +269,116 @@
                   </div>
                </div>
             </div>
-         </footer>
-         <!-- end footer -->
-         <!-- Javascript files-->
-         <script src="js/jquery.min.js"></script>
-         <script src="js/bootstrap.bundle.min.js"></script>
-         <script src="js/jquery-3.0.0.min.js"></script>
-         <script>
-            function showSuccessPopup() {
-               // Perform form submission logic here (e.g., AJAX request)
-         
-               // Show a pop-up message upon successful submission
-               alert("Form submitted successfully!");
+         </div>
+      </footer>
 
-               // Redirect to another page (replace 'your_destination_page.html' with the actual page URL)
-               window.location.href = 'statistic_admin.html';
-         
-               // Prevent the form from actually submitting (comment out this line if you want to proceed with the form submission)
-               return false;
-            }
-         </script>
-         <!-- sidebar -->
-         <script src="js/custom.js"></script>
-         <script>
-            AOS.init();
-        </script>
-      </body>
+      <div id="popup-form">
+         <div class="container">
+           <h2>Add Mosques</h2>
+         <form onsubmit="submitForm(); return false;">
+            <div class="row">
+               <div class="col-25">
+                  <label for="district">Select District:</label>
+               </div>
+               <div class="col-75">
+                  <select name="district" id="district" class="form-control" required>
+                     <option value="kotabharu">Kota Bharu</option>
+                     <option value="pasirmas">Pasir Mas</option>
+                     <option value="tanahmerah">Tanah Merah</option>
+                     <option value="pasirputeh">Pasir Puteh</option>
+                     <option value="kualakrai">Kuala Krai</option>
+                     <option value="guamusang">Gua Musang</option>
+                     <option value="jeli">Jeli</option>
+                     <option value="machang">Machang</option>
+                     <option value="bachok">Bachok</option>
+                     <option value="tumpat">Tumpat</option>
+                  </select>
+               </div>
+             </div>
+             <br>
+         <div class="row">
+           <div class="col-25">
+            <label for="mosqueName">New Mosque Name:</label>           
+         </div>
+           <div class="col-75">
+            <input type="text" id="mosqueName" name="mosqueName" class="form-control" required>
+           </div>
+         </div>
+         <br>
+         <div class="row">
+            <div class="col-25">
+             <label for="mosqueName">Contact Number:</label>           
+          </div>
+            <div class="col-75">
+             <input type="text" id="mosqueCont" name="mosqueCont" class="form-control" required>
+            </div>
+          </div>
+         <br>
+         <div class="row">
+            <div class="col-25">
+             <label for="newCount">Address</label>           
+            </div>
+            <div class="col-75">
+               <input type="text" id="mosqueAdd" name="mosqueAdd" style="height: 100px;" class="form-control" required>
+            </div>
+          </div>
+         <br>
+         <div class="row">
+           <div class="col-25">
+             <label> </label>
+           </div>
+           <div class="col-75"> <button type="submit" style="background-color: #45a049;
+             color: white;
+             padding: 12px 20px;">Update</button>
+             <button onclick="hidePopup()" style="background-color: #f70404;
+             color: white;
+             padding: 12px 20px;">Cancel</button>
+           </div>
+         </div>
+           
+             </form>
+       </div>
+   
+   </div> 
+
+   <script>
+      function showPopup() {
+    document.getElementById('popup-form').style.display = 'block';
+}
+
+function hidePopup() {
+    document.getElementById('popup-form').style.display = 'none';
+}
+
+function submitForm() {
+    const district = document.getElementById('district').value;
+    const mosqueName = document.getElementById('mosqueName').value;
+    const mosqueCont = document.getElementById('mosqueCont').value; // Add this line
+    const mosqueAdd = document.getElementById('mosqueAdd').value;   // Add this line
+
+    // Display success message and list the entered information
+    alert(`Mosque added successfully!\n\nDistrict: ${district}\nMosque Name: ${mosqueName}\nContact Number: ${mosqueCont}\nAddress: ${mosqueAdd}`);
+
+    // Reset form and hide the popup
+    document.getElementById('popup-form').style.display = 'none';
+    document.getElementById('district').value = 'kotabharu'; // Reset to default value or an appropriate default
+    document.getElementById('mosqueName').value = '';
+    document.getElementById('mosqueCont').value = '';   // Add this line
+    document.getElementById('mosqueAdd').value = '';    // Add this line
+}
+
+
+    </script>
+
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="js/custom.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
 </html>

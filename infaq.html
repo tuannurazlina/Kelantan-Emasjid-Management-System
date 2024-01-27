@@ -234,6 +234,60 @@ section {
 }
 
       </style>
+      <script>
+         function redirectToExternalSite() {
+             // Add a parameter to the URL to identify the return page
+             const returnUrl = encodeURIComponent(window.location.href);
+             const externalUrl = `https://www.bankislam.biz/?returnUrl=${returnUrl}`;
+             
+             // Redirect to Bank Islam page
+             window.location.href = externalUrl;
+         }
+ 
+         function checkReturnUrl() {
+             // Check if there is a returnUrl parameter in the URL
+             const urlParams = new URLSearchParams(window.location.search);
+             const returnUrl = urlParams.get('returnUrl');
+ 
+             if (returnUrl) {
+                 // Redirect back to the original page
+                 window.location.href = returnUrl;
+ 
+                 // Display the success popup
+                 document.getElementById('success-message').style.display = 'block';
+             }
+         }
+ 
+         function closeSuccessPopup() {
+             // Close the success popup
+             document.getElementById('success-message').style.display = 'none';
+         }
+ 
+         function handleSubmit(event) {
+             event.preventDefault();
+ 
+             // Get the donation amount entered by the user
+             const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+ 
+             // Check if the entered amount is valid
+             if (!isNaN(donationAmount) && donationAmount > 0) {
+                 // Update the total donation amount
+                 totalDonationAmount += donationAmount;
+ 
+                 // Display the updated total donation amount on the webpage
+                 document.getElementById('donation-amount-display').textContent = `RM ${totalDonationAmount.toFixed(2)}`;
+ 
+                 // Display the success popup
+                 document.getElementById('success-message').style.display = 'block';
+             } else {
+                 // Handle invalid donation amount (e.g., show an error message)
+                 alert('Please enter a valid donation amount.');
+             }
+         }
+ 
+         // Check the returnUrl when the page loads
+         checkReturnUrl();
+     </script>
    </head>
    <body class="main-layout">
       <!-- header -->
@@ -303,39 +357,33 @@ section {
         </section>
 
         <section id="donation-form">
-            <h2>Make a Donation</h2>
-            <form id="donationForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="donor-name">Full Name:</label>
-                    <input type="text" id="donor-name" name="donor-name" required>
-                </div>
-
-                <div class="form-group">
-                  <input type="button" value="Donate" onclick="redirectToExternalSite()">
-              </div>
-              
-              <script>
-                  function redirectToExternalSite() {
-                      window.location.href = "https://www.bankislam.biz/";
-                  }
-              </script>
-              
-              
-              
-                <div id="success-message">
-                    <div>
-                        <span class="close-btn" onclick="closePopup()">&times;</span>
-                        <p>Thank you for your donation!</p>
-                    </div>
-                </div>
-        
-                </div>
-            </form>
-            
-            </div>
-        </section>
-    </main>
-
+         <h2>Make a Donation</h2>
+         <form id="donationForm" onsubmit="handleSubmit(event)">
+             <div class="form-group">
+                 <label for="donor-name">Full Name:</label>
+                 <input type="text" id="donor-name" name="donor-name" required>
+             </div>
+ 
+             <!-- Add an input for donation amount -->
+             <div class="form-group">
+                 <label for="donation-amount">Donation Amount:</label>
+                 <input type="number" id="donation-amount" name="donation-amount" required>
+             </div>
+ 
+             <div class="form-group">
+                 <!-- Call the first function on button click to redirect to the external site -->
+                 <input type="button" value="Donate" onclick="redirectToExternalSite()">
+             </div>
+ 
+             <div id="success-message">
+                 <div>
+                     <span class="close-btn" onclick="closeSuccessPopup()">&times;</span>
+                     <p>Thank you for your donation!</p>
+                 </div>
+             </div>
+         </form>
+     </section>
+   </main>
      
       </div>
    

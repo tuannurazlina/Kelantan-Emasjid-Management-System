@@ -26,7 +26,33 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
+      <style>
+         .navigation.navbar {
+            float: center;
+            padding: 30px;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link {
+            padding: 10px 20px;
+            color: #2b2b2b;
+            font-size: 13px;
+            line-height: 15px;
+            font-weight: 400;
+            border-radius: 20px;
+            text-transform: uppercase;
+         }
+      .navigation.navbar-dark .navbar-nav .nav-link:focus,
+      .navigation.navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+            background: #f0390f;
+         }
+      .navigation.navbar-dark .navbar-nav .active>.nav-link,
+      .navigation.navbar-dark .navbar-nav .nav-link.active,
+      .navigation.navbar-dark .navbar-nav .nav-link.show,
+      .navigation.navbar-dark .navbar-nav .show>.nav-link {
+            color: #fff;
+            background: #f0390f;
+         }
+      </style>
    <!-- body -->
    <body class="main-layout inner_page">
       <!-- header -->
@@ -76,6 +102,15 @@
                         </ul>
                      </div>
                   </nav>
+               </div>
+               <div class="col-md-2">
+                  <ul class="email text_align_right">
+                     <li class="d_none">
+                        <a href="login_admin.html">
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>

@@ -231,22 +231,25 @@
             });
         </script>
         <script>
-            function processActions() {
-                var selectedAction = document.querySelector('input[name^="action_"]:checked');
-        
-                if (selectedAction) {
-                    var fullName = selectedAction.name.replace("action_", "");
-                    var action = selectedAction.value;
-                    // Implement logic to handle the selected action
-                    if (action === 'accept') {
-                        alert("Application for " + fullName + " accepted.");
-                    } else if (action === 'reject') {
-                        alert("Application for " + fullName + " rejected.");
-                    }
-                } else {
-                    alert("Please select an action for at least one application.");
-                }
-            }
+         function processActions() {
+             var selectedAction = document.querySelector('input[name^="action_"]:checked');
+     
+             if (selectedAction) {
+                 var fullName = selectedAction.name.replace("action_", "");
+                 var action = selectedAction.value;
+                 // Implement logic to handle the selected action
+                 if (action === 'accept') {
+                     alert("Application for " + fullName + " accepted.");
+                 } else if (action === 'reject') {
+                     alert("Application for " + fullName + " rejected.");
+                 }
+                 
+                 // Redirect to a specific page after the alert
+                 window.location.href = "hajj_admin.html";
+             } else {
+                 alert("Please select an action for at least one application.");
+             }
+         }
         </script>
       </body>
 </html>

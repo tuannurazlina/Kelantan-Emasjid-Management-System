@@ -311,10 +311,15 @@ section {
                 </div>
 
                 <div class="form-group">
-                  <a href="https://www.bankislam.biz/" target="_blank">
-                      <input type="submit" value="Donate">
-                  </a>
+                  <input type="button" value="Donate" onclick="redirectToExternalSite()">
               </div>
+              
+              <script>
+                  function redirectToExternalSite() {
+                      window.location.href = "https://www.bankislam.biz/";
+                  }
+              </script>
+              
               
               
                 <div id="success-message">

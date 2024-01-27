@@ -100,6 +100,9 @@
                                  <a class="nav-link" href="services.html">Services</a>
                               </li>
                               <li class="nav-item">
+                                 <a class="nav-link" href="hajj.html">Hajj</a>
+                              </li>
+                              <li class="nav-item">
                                  <a class="nav-link" href="ramadhan.html">Ramadhan</a>
                               </li>
                               <li class="nav-item">
@@ -107,6 +110,9 @@
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="facilities.html">Facilities</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="applicationstatus.html">Application Status</a>
                               </li>
                            </ul>
                         </div>
@@ -132,10 +138,28 @@
                <form action="process_hajj_course_booking.php" method="post" onsubmit="return showSuccessPopup()">
                   <label for="full_name">Full Name:</label>
                   <input type="text" id="full_name" name="full_name" required>
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" required>
+         
+                  <label for="gender">Gender:</label>
+                  <select id="gender" name="gender" required>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                  </select>
+         
+                  <label for="ic">IC:</label>
+                  <input type="text" id="ic" name="ic" required>
+         
+                  <label for="address">Address:</label>
+                  <textarea id="address" name="address" rows="4" required></textarea>
+         
                   <label for="phone">Phone Number:</label>
                   <input type="tel" id="phone" name="phone" required>
+
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                  
+                  <label for="datetime">Date and Time:</label>
+                  <input type="datetime-local" id="datetime" name="datetime" required>
+         
                   <label for="district">District:</label>
                   <select id="district" name="district" onchange="updateMasjidList()" required>
                      <option value="" disabled selected>Select district</option>
@@ -150,15 +174,17 @@
                      <option value="Bachok">Bachok</option>
                      <option value="Tumpat">Tumpat</option>
                   </select>
+
                   <label for="masjid">Masjid:</label>
                   <select id="masjid" name="masjid" required>
                      <option value="" disabled selected>Select masjid</option>
                      <!-- Masjid options will be dynamically populated based on the selected district -->
-                  </select>            
-                  <label for="date">Date:</label>
-                  <input type="date" id="date" name="date" required>
+                  </select>
+
                   <br><br>
+                  
                   <button type="submit" class="button-custom">Submit</button>
+
                   <script>
                      function updateMasjidList() {
                          var districtSelect = document.getElementById("district");

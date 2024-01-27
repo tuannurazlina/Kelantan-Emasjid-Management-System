@@ -25,6 +25,21 @@
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <style>
+            .button-custom {
+               border: 1px solid #000;
+               padding: 5px;
+               border-radius: 10px;
+               background-color: #f0f0f0;
+               color: #000;
+               transition: background-color 0.3s, color 0.3s; /* Add smooth transition effect */
+
+            }
+            .button-custom:hover {
+               background-color: #000; /* Change to the desired hover background color */
+               color: #f0f0f0; /* Change to the desired hover text color */
+            }
+        </style>
     </head>
     <!-- body -->
     <body class="main-layout inner_page">
@@ -102,7 +117,7 @@
                             <label for="password">Password:</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="button" class="btn btn-primary" onclick="validateLoginAndNavigate()">Login</button>
+                        <button type="button" class="button-custom" onclick="validateLoginAndNavigate()">Login</button>
                         </form>
                     </div>
                 </div>
@@ -134,7 +149,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>© 2023 All Rights Reserved. Design by AMANAT SDN BHD</p>
+                            <p>© 2024 All Rights Reserved. Design by AMANAT SDN BHD</p>
                         </div>
                     </div>
                 </div>

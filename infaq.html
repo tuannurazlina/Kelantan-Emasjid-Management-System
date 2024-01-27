@@ -316,8 +316,10 @@ section {
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Donate">
-                </div>
+                  <input type="button" value="Donate" onclick="redirectToDonationPage()">
+              </div>
+              </form>
+              
                 <div id="success-message">
                     <div>
                         <span class="close-btn" onclick="closePopup()">&times;</span>
@@ -392,5 +394,14 @@ section {
           document.getElementById('success-message').style.display = 'none';
       }
    </script>
+   <script>
+      function redirectToDonationPage() {
+          // Display a popup message
+          alert("Thank you for wanting to donate. You will redirected to the payment page");
+  
+          // Open the donation page in a new window
+          window.open("https://www.bankislam.biz/", "_blank");
+      }
+  </script>
    </body>
 </html>

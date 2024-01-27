@@ -47,6 +47,17 @@
                background-color: #000; /* Change to the desired hover background color */
                color: #f0f0f0; /* Change to the desired hover text color */
             }
+
+        .button-container {
+            position: relative;
+        }
+
+        .button-custom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
          </style>
          <meta name="keywords" content="">
          <meta name="description" content="">
@@ -115,12 +126,7 @@
                         </div>
                      </nav>
                   </div>
-                  <div class="col-md-2">
-                     <ul class="email text_align_right">
-                        <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                        <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li>
-                     </ul>
-                  </div>
+                  
                </div>
             </div>
          </div>
@@ -131,7 +137,7 @@
         <h2 class="text_align_center">LIST OF QURBAN APPLICATION</h2><br>
         <div class="table-container">
            <table class="fixed-table">
-              <table style="border-collapse: collapse; width: 100%; border: 1px solid #ddd;">
+              <table style="border-collapse: collapse; width: 90%; border: 1px solid #ddd;">
                  <thead>
                     <tr>
                      <th style="border: 1px solid #ddd;">FULL NAME</th>
@@ -168,7 +174,9 @@
               </table>
            </table>
            <br>
-           <button type="button" class="button-custom" onclick="processActions()">Submit</button>
+           <div class="button-container">
+            <button type="button" class="button-custom" onclick="processActions()">Submit</button>
+        </div>
         </div>
      </div>
      <!-- end admin - hajj course form -->
